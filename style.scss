@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+$blue: hsl(223, 87%, 63%);
+$pale-blue: hsl(223, 100%, 88%);
+$light-red: hsl(354, 100%, 66%);
+$gray: hsl(0, 0%, 59%);
+$very-dark-blue: hsl(209, 33%, 12%);
 $breakpoints: (
     "phone-down": 500px,
     "tablet-up": 768px,
@@ -18,4 +24,73 @@ $breakpoints: (
 }
 html {
     font-size: 62.5%;
+    font-family: 'Libre Franklin', sans-serif;
+}
+html,body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0 40px;
+}
+h1 {
+    margin-top: 85px;
+    font-size: 2rem;
+}
+h2 {
+    margin-top: 45px;
+    font-weight: 300;
+    font-size: 2rem;
+}
+h3 {
+    margin-top: 21px;
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+.form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    input {
+        border: solid $pale-blue 1px;
+        border-radius: 20px;
+        height: 40px;
+        padding-left: 20px;
+        &::placeholder {
+            color: $gray;
+            font-weight: 300;
+            opacity: 50%;
+        }
+    }
+    button {
+        background-color: $blue;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        height: 40px;
+        margin-top: 8px;
+    }
+}
+img {
+    margin-top: 71px;
+    width: 100%;
+}
+.social-networks {
+    margin-top: 118px;
+}
+small {
+    margin-top: 30px;
+    color: $gray;
+    ion-icon {
+        border: solid gray 1px;
+    }
+}
+footer {
+    margin-top: 37px;
+    text-align: center;
 }
