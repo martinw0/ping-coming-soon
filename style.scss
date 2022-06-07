@@ -38,11 +38,23 @@ main {
     flex-grow: 1;
     text-align: center;
     margin: 0 40px;
+    @include media-min("tablet-down") {
+        margin: 0 20vw;
+    }
+    @include media-min("desktop-down") {
+        margin: 0 26vw;
+    }
 }
 h1 {
     margin-top: 85px;
     font-size: 2rem;
     color: $very-dark-blue;
+    span {
+        color: $blue;
+    }
+    @include media-min("desktop-down") {
+        font-size: 3rem;
+    }
 }
 h2 {
     margin-top: 45px;
@@ -52,33 +64,59 @@ h2 {
     strong {
         color: $very-dark-blue;
     }
+    @include media-min("desktop-down") {
+        font-size: 4rem;
+    }
 }
 h3 {
     margin-top: 21px;
     font-weight: 300;
     font-size: 1.2rem;
     color: $very-dark-blue;
+    @include media-min("desktop-down") {
+        font-size: 2rem;
+    }
 }
 .form {
     margin-top: 30px;
     display: flex;
     flex-direction: column;
+    @include media-min("tablet-down") {
+        flex-direction: row;
+        justify-content: space-between;
+    }
     input {
         border: solid $pale-blue 1px;
         border-radius: 20px;
+        box-sizing: border-box;
         height: 40px;
         width: 100%;
         padding-left: 20px;
         font-size: 1.2rem;
+        font-weight: 300;
         outline: none;
         &::placeholder {
             color: $gray;
             font-weight: 300;
             opacity: 50%;
         }
+        @include media-min("desktop-down") {
+            height: 60px;
+            border-radius: 30px;
+            font-size: 1.7rem;
+        }
+    }
+    .input-container {
+        @include media-min("tablet-down") {
+            width: 62%;
+        }
     }
     .input-container[error-msg] {
-        margin-bottom: 15px;;
+        margin-bottom: 15px;
+        @include media-min("tablet-down") {
+            text-align: left;
+            margin-bottom: 0;
+        }
     }
     .input-container[error-msg] input {
         border: solid $light-red 1px;
@@ -89,6 +127,12 @@ h3 {
         color: $light-red;
         font-style: italic;
         font-weight: 400;
+        @include media-min("tablet-down") {
+            padding-left: 20px;
+        }
+        @include media-min("desktop-down") {
+            font-size: 1.3rem;
+        }
     }
     button {
         background-color: $blue;
@@ -96,10 +140,24 @@ h3 {
         border: none;
         border-radius: 20px;
         height: 40px;
+        width: 100%;
         margin-top: 8px;
         font-size: 1.1rem;
         font-weight: 500;
         box-shadow: 0px 7px 18px 1px rgba(0,0,0,0.17);
+        &:hover {
+            cursor: pointer;
+            opacity: 80%;
+        }
+        @include media-min("tablet-down") {
+            width: 35%;
+            margin-top: 0;
+        }
+        @include media-min("desktop-down") {
+            height: 60px;
+            border-radius: 30px;
+            font-size: 1.6rem;
+        }
     }
 }
 img {
@@ -115,12 +173,20 @@ img {
         border-radius: 50%;
         color: $blue;
         font-size: 1.6rem;
+        &:hover {
+            cursor: pointer;
+            color: white;
+            background-color: $blue;
+        }
     }
 }
 p {
     margin-top: 30px;
     color: $gray;
     font-size: 1.2rem;
+    @include media-min("desktop-down") {
+        font-size: 1.6rem;
+    }
 }
 footer {
     margin-top: 37px;
