@@ -25,8 +25,8 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 - Submit their email address using an `input` field
 - Receive an error message when the `form` is submitted if:
-	- The `input` field is empty. The message for this error should say *"Whoops! It looks like you forgot to add your email"*
-	- The email address is not formatted correctly (i.e. a correct email address should have this structure: `name@host.tld`). The message for this error should say *"Please provide a valid email address"*
+  - The `input` field is empty. The message for this error should say *"Whoops! It looks like you forgot to add your email"*
+  - The email address is not formatted correctly (i.e. a correct email address should have this structure: `name@host.tld`). The message for this error should say *"Please provide a valid email address"*
 
 ### Screenshot
 
@@ -50,7 +50,17 @@ Users should be able to:
 
 ### What I learned
 
+How to use the ::after in css and how to get html attribute in css:
+
+```css
+div::after {
+  content: attr(class);
+}
+```
+
 ### Continued development
+
+Learn more about the semantic in HTML
 
 ### Useful resources
 
