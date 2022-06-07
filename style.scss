@@ -3,6 +3,7 @@ $blue: hsl(223, 87%, 63%);
 $pale-blue: hsl(223, 100%, 88%);
 $light-red: hsl(354, 100%, 66%);
 $gray: hsl(0, 0%, 59%);
+$light-gray: rgba(150, 150, 150, 0.25);
 $very-dark-blue: hsl(209, 33%, 12%);
 $breakpoints: (
     "phone-down": 500px,
@@ -41,16 +42,22 @@ main {
 h1 {
     margin-top: 85px;
     font-size: 2rem;
+    color: $very-dark-blue;
 }
 h2 {
     margin-top: 45px;
     font-weight: 300;
-    font-size: 2rem;
+    font-size: 2.2rem;
+    color: $gray;
+    strong {
+        color: $very-dark-blue;
+    }
 }
 h3 {
     margin-top: 21px;
     font-weight: 300;
     font-size: 1.2rem;
+    color: $very-dark-blue;
 }
 .form {
     margin-top: 30px;
@@ -60,12 +67,28 @@ h3 {
         border: solid $pale-blue 1px;
         border-radius: 20px;
         height: 40px;
+        width: 100%;
         padding-left: 20px;
+        font-size: 1.2rem;
+        outline: none;
         &::placeholder {
             color: $gray;
             font-weight: 300;
             opacity: 50%;
         }
+    }
+    .input-container[error-msg] {
+        margin-bottom: 15px;;
+    }
+    .input-container[error-msg] input {
+        border: solid $light-red 1px;
+        margin-bottom: 4px;
+    }
+    .input-container[error-msg]::after {
+        content: attr(error-msg);
+        color: $light-red;
+        font-style: italic;
+        font-weight: 400;
     }
     button {
         background-color: $blue;
@@ -74,6 +97,9 @@ h3 {
         border-radius: 20px;
         height: 40px;
         margin-top: 8px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        box-shadow: 0px 7px 18px 1px rgba(0,0,0,0.17);
     }
 }
 img {
@@ -82,13 +108,19 @@ img {
 }
 .social-networks {
     margin-top: 118px;
+    ion-icon {
+        margin: 0 6px;
+        padding: 8px;
+        border: solid $light-gray 1px;
+        border-radius: 50%;
+        color: $blue;
+        font-size: 1.6rem;
+    }
 }
-small {
+p {
     margin-top: 30px;
     color: $gray;
-    ion-icon {
-        border: solid gray 1px;
-    }
+    font-size: 1.2rem;
 }
 footer {
     margin-top: 37px;
